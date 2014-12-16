@@ -161,7 +161,7 @@ class Writer extends RepositoryBase{
         return $result;
     }
 
-    public function write($keys, $values, $paths = NULL)
+    public function write($keys, $values, $paths = "")
     {
 
         if(count($keys)>1){
@@ -170,7 +170,7 @@ class Writer extends RepositoryBase{
 
             foreach ($keys as $index => $key) {
 
-                if($paths[$index]=="")
+                if(!is_array($paths))
                     $paths[$index] = "";
 
                 list($namespace, $group, $item) = $this->parseKey($key);
