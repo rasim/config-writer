@@ -161,20 +161,20 @@ class Writer extends RepositoryBase{
         return $result;
     }
 
-    public function write($keys, $values, $paths = array())
+    public function write($keys, $values, $paths = NULL)
     {
 
+       
+
         if(count($keys)>1){
-            
-
-
+            $path = array();
             foreach ($keys as $index => $key) {
 
-                if(is_array($paths))
-                	$paths = $paths[$index];
+                if(empty($paths[$index]))
+                    $paths[$index] = "";
 
                 list($namespace, $group, $item) = $this->parseKey($key);
-                $result = $this->writer($item, $values[$index], $this->environment, $group, $namespace,$paths);
+                $result = $this->writer($item, $values[$index], $this->environment, $group, $namespace,$paths[$index]);
                 if(!$result) throw new \Exception('File could not be written to');
                 $this->set($key, $values[$index]);
             }
