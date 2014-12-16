@@ -161,7 +161,7 @@ class Writer extends RepositoryBase{
         return $result;
     }
 
-    public function write($keys, $values, $paths = "")
+    public function write($keys, $values, $paths = null)
     {
 
         if(count($keys)>1){
@@ -170,11 +170,11 @@ class Writer extends RepositoryBase{
 
             foreach ($keys as $index => $key) {
 
-                if(!is_array($paths))
-                    $paths[$index] = "";
+                if(!is_null($paths))
+                    $paths = "config";
 
                 list($namespace, $group, $item) = $this->parseKey($key);
-                $result = $this->writer($item, $values[$index], $this->environment, $group, $namespace,$paths[$index]);
+                $result = $this->writer($item, $values[$index], $this->environment, $group, $namespace,$paths);
                 if(!$result) throw new \Exception('File could not be written to');
                 $this->set($key, $values[$index]);
             }
