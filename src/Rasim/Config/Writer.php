@@ -170,7 +170,7 @@ class Writer extends RepositoryBase{
 
             foreach ($keys as $index => $key) {
 
-                if(is_null($paths[$index]))
+                if($paths[$index]=="")
                     $paths[$index] = "";
 
                 list($namespace, $group, $item) = $this->parseKey($key);
