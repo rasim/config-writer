@@ -1,0 +1,24 @@
+{
+    "name": "rasim/config",
+    "description": "Config Writer for Laravel 4",
+    "keywords": ["laravel","config","writer","save","write"],
+    "authors": [
+        {
+            "name": "Rasim ÖZDİNÇ",
+            "email": "rasimozdinc@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Rasim\\Config\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
