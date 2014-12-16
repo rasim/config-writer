@@ -14,7 +14,6 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
         ],
         "psr-0": {
             "Rasim\\Config\\": "src/"
