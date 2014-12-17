@@ -34,7 +34,8 @@ Config::write("__FILE.CONFIG__","__VALUE__","__FOLDER__");
  ```
  
   ```shell
-  __FOLDER__ optional default path folder: config
+  __FOLDER__ (optional)
+  default path folder: config
   ```
 
 Single Write
